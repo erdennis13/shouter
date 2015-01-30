@@ -15,3 +15,6 @@ gem 'spring',        group: :development
 gem 'monban', '~> 0.1.1'
 gem 'monban-generators'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
