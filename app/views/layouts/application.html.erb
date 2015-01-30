@@ -8,20 +8,7 @@
 </head>
 <body>
 
-	<%= form_for(:search, url: search_path, method: :get) do |form| %>
-		<%= form.text_field :term, placeholder: "search..." %>
-		<%= form.submit "Search" %>
-	<% end %>
-
-	<div>
-		<% if signed_in? %>
-			<%= link_to current_user.username, dashboard_path %>
-			<%= link_to "Sign Out", session_path, method: :delete %>
-		<% else %>
-			<%= link_to "Sign In", new_session_path %>
-			<%= link_to "Sign Up", new_user_path %>
-		<% end %>
-	</div>
+<%= render "layouts/navbar" %>
 
 	<% if alert %>
 		<p><%= alert %></p>
@@ -30,7 +17,9 @@
 		<p><%= notice %></p>
 	<% end %>
 
-<%= yield %>
+<div class="container">
+	<%= yield %>
+</div>
 
 </body>
 </html>

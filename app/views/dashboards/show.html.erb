@@ -1,12 +1,27 @@
-<%= form_for @dashboard.new_text_shout do |form| %>
-	<%= form.text_field :body, placeholder: "Type content here..." %>
-	<%= form.submit "Shout!" %>
-<% end %>
+<div class="row">
+	<div class="col-sm-3 pull-right">
+		<%= form_for @dashboard.new_text_shout, html: {class: "form-inline"} do |form| %>
+			<div class="form-group">
+				<%= form.text_field :body, placeholder: "Type content here...", class: "form-control" %>
+				<%= form.submit "Shout!", class: "btn btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-sm-4 pull-right">
+		<%= form_for @dashboard.new_photo_shout, html: {class: "form-inline"} do |form| %>
+			<div class="form-group">
+				<%= form.file_field :image, class: "form-control" %>
+				<%= form.submit "Shout!", class: "btn btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+	<div class="col-sm-2 pull-left">
+		<h3>Shouts</h3>
+	</div>
+</div>
 
-<%= form_for @dashboard.new_photo_shout do |form| %>
-	<%= form.file_field :image %>
-	<%= form.submit "Shout!" %>
-<% end %>
-
-
+<br/>
 <%= render @dashboard.timeline %>
